@@ -46,6 +46,8 @@ spec:
             - matchExpressions:
               - key: cloud.google.com/gke-preemptible
                 operator: Exists
+      nodeSelector:
+        cloud.google.com/gke-preemptible: "true"
       containers:
       - image: builds-registry.ystack.svc.cluster.local/yolean/gke-node-termination-handler
         name: node-termination-handler
