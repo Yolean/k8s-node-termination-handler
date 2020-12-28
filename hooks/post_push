@@ -1,0 +1,6 @@
+#!/bin/bash
+set -ex
+
+PUSH_TAG=yolean/k8s-node-termination-handler:$SOURCE_COMMIT
+docker tag $IMAGE_NAME $PUSH_TAG
+docker push $PUSH_TAG
