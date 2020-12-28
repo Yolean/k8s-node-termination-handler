@@ -1,0 +1,4 @@
+*
+!go.*
+!main.go
+!termination
