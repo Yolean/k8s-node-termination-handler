@@ -73,6 +73,9 @@ spec:
           limits:
             cpu: 150m
             memory: 30Mi
+          requests:
+            cpu: 5m
+            memory: 5Mi
       tolerations:
       # Run regardless of any existing taints.
       - effect: NoSchedule
