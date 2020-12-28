@@ -47,7 +47,7 @@ spec:
               - key: cloud.google.com/gke-preemptible
                 operator: Exists
       containers:
-      - image: k8s.gcr.io/gke-node-termination-handler@sha256:aca12d17b222dfed755e28a44d92721e477915fb73211d0a0f8925a1fa847cca
+      - image: builds-registry.ystack.svc.cluster.local/yolean/gke-node-termination-handler
         name: node-termination-handler
         args:
         - --logtostderr

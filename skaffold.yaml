@@ -1,0 +1,13 @@
+apiVersion: skaffold/v2beta10
+kind: Config
+metadata:
+  name: node-termination-handler
+build:
+  artifacts:
+  - image: builds-registry.ystack.svc.cluster.local/yolean/gke-node-termination-handler
+    docker:
+      dockerfile: Dockerfile
+deploy:
+  kustomize:
+    paths:
+    - deploy
