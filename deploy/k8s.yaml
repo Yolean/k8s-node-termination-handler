@@ -52,7 +52,7 @@ spec:
         args:
         - --logtostderr
         - --exclude-pods=$(POD_NAME):$(POD_NAMESPACE)
-        - -v=10
+        - -v=6
         - --taint=cloud.google.com/impending-node-termination::NoSchedule
         securityContext:
           capabilities:
