@@ -12,4 +12,4 @@ RUN CGO_ENABLED=0 GOOS=linux go build -a -ldflags '-extldflags "-static"' -tags 
 FROM gcr.io/distroless/static:latest
 WORKDIR /app
 COPY --from=build-env /go/src/github.com/GoogleCloudPlatform/k8s-node-termination-handler/node-termination-handler /app/
-ENTRYPOINT [./node-termination-handler]
+ENTRYPOINT [ "./node-termination-handler" ]
