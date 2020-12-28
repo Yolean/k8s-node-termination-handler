@@ -16,19 +16,19 @@ apiVersion: apps/v1
 kind: DaemonSet
 metadata:
   labels:
-    app: node-termination-handler
+    k8s-app: node-termination-handler
   name: node-termination-handler
   namespace: kube-system
 spec:
   selector:
     matchLabels:
-      app: node-termination-handler
+      k8s-app: node-termination-handler
   updateStrategy:
     type: RollingUpdate
   template:
     metadata:
       labels:
-        app: node-termination-handler
+        k8s-app: node-termination-handler
     spec:
       # Necessary to hit the node's metadata server when using Workload Identity
       hostNetwork: true
