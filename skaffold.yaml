@@ -1,0 +1,27 @@
+apiVersion: skaffold/v2beta10
+kind: Config
+metadata:
+  name: node-termination-handler
+build:
+  tagPolicy:
+    gitCommit:
+      variant: CommitSha
+  artifacts:
+  - image: builds-registry.ystack.svc.cluster.local/yolean/gke-node-termination-handler
+    docker:
+      dockerfile: Dockerfile
+deploy:
+  kubectl:
+    manifests:
+    - deploy/k8s.yaml
+profiles:
+- name: prod-build
+  patches:
+  - op: replace
+    path: /build/artifacts/0/image
+    value: prod-registry.ystack.svc.cluster.local/yolean/gke-node-termination-handler
+  deploy:
+    # Will emit "WARN image is not used by the deployment" but will include RBAC
+    kustomize:
+      paths:
+      - deploy
