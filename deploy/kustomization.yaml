@@ -3,5 +3,5 @@ resources:
 - k8s.yaml
 images:
 - name: builds-registry.ystack.svc.cluster.local/yolean/gke-node-termination-handler
-  newName: prod-registry.ystack.svc.cluster.local/yolean/gke-node-termination-handler
-  newTag: 077c1ff4e1d4fbce9670070f0384230c6455017c-dirty@sha256:6a87231eab547f080e803348be6b8b1614b451fdd3a44c8787b3cda6c53a9c3a
+  newName: docker.io/yolean/k8s-node-termination-handler
+  newTag: a4b3d456e286a876fb3f1d921945a6548992aff8@sha256:b23d4f3d1efa56c1c9db5557c2fd21a2dbf97a12e737755451f2b2d1a8b073ae
