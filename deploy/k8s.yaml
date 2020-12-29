@@ -56,6 +56,7 @@ spec:
         - --exclude-pods=$(POD_NAME):$(POD_NAMESPACE)
         - -v=6
         - --taint=cloud.google.com/impending-node-termination::NoSchedule
+        - --system-pod-grace-period=14s
         securityContext:
           capabilities:
             # Necessary to reboot node
